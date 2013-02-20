@@ -1,12 +1,5 @@
 /*
 	Change _game_id and _game_signature below!
-
-	Example usage:
-	GJAPI.sendRequest( '/users/auth/?username=tester&user_token=token', function( reponse ){
-		if ( response.success == 'true' ) {
-			alert( 'user logged in!' );
-		}
-	} )
 */
 
 GJAPI = function()
@@ -33,6 +26,7 @@ GJAPI = function()
 			// Send off the request!
 			microAjax( url, function( response ){
 				response = eval( '(' + response + ')' );
+				callback( response.response );
 			} );
 		}
 	};
