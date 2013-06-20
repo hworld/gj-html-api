@@ -17,7 +17,16 @@ GJAPI = function()
 
 			// Construct the URL.
 			url = _api_url + url;
-			url += '&game_id=' + _game_id + '&format=' + _format;
+
+			// Check for ?
+			if ( url.indexOf( '?' ) !== -1 ) {
+				url += '?';
+			}
+			else {
+				url += '&';
+			}
+
+			url += 'game_id=' + _game_id + '&format=' + _format;
 
 			// Generate the signature and attach it to request.
 			var signature = hex_md5( url + _game_key );
