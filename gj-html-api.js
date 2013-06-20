@@ -19,7 +19,7 @@ GJAPI = function()
 			url = _api_url + url;
 
 			// Check for ?
-			if ( url.indexOf( '?' ) !== -1 ) {
+			if ( url.indexOf( '?' ) === -1 ) {
 				url += '?';
 			}
 			else {
